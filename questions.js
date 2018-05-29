@@ -5,7 +5,7 @@
 //             /wp-content/themes/CruisersNet/includes/get_question.php
 //             /wp-content/themes/CruisersNet/includes/test_questions.php
 //
-var nCookie = null; // Tracking newsletter question
+var nCookie = 'nCookie'; // Tracking newsletter question
 var qCookie = 'qCookie'; // Tracking general question
 var dialogDiv = "#divDialog";
 
