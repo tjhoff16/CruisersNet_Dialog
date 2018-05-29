@@ -9,17 +9,17 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <?php
-  echo "<script type='text/javascript' src='/wp-content/themes/CruisersNet/js/questions.js'></script>";
-  echo "$question <div id='divDialog' style='background-color:white; border: 2px solid black; padding: 0px 20px 0px 20px; width: 500px; max-height: 400px;'></div>";
-  ?>  
+  echo "<script type='text/javascript' src='qt.js'></script>";
+  ?>
 
   <script type='text/javascript' src='qt.js'></script>
 </head>
 <body>
-
-<div id="dialog" title="Basic dialog">
+<?php   echo "<div id='divDialog' style='background-color:white; border: 2px solid black; padding: 0px 20px 0px 20px; width: 500px; max-height: 400px;'></div>";
+ ?>
+<!-- <div id="dialog" title="Basic dialog">
   <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
+</div> -->
 
 
 </body>
