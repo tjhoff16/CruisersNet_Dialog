@@ -39,7 +39,7 @@ function readCookie(name) {
 function initializeQuestions() {
     // Newsletter Cookie DOES NOT EXIST so show Newsletter question
     if ( readCookie(nCookie)===null ) {
-        openDialog( '1', jQuery("#divQ1").html() );
+        openDialog( '1', jQuery("#divDialog").html() );
     } else {
         if ( jQuery( "#qNumber" ).length ) openDialog( jQuery('#qNumber').val(), jQuery("#divQ3").html() );
     }

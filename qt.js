@@ -1,4 +1,4 @@
-var nCookie = 'nCookie'; // Tracking newsletter question
+var nCookie = null; // Tracking newsletter question
 var qCookie = 'qCookie'; // Tracking general question
 var dialogDiv = "#divDialog";
 
@@ -31,8 +31,8 @@ function readCookie(name) {
 
 function initializeQuestions() {
     // Newsletter Cookie DOES NOT EXIST so show Newsletter question
-    if ( readCookie(nCookie)===null ) {
-        openDialog( '1', jQuery("#divQ1").html() );
+    if ( nCookie===null ) {
+        openDialog( '1', jQuery("#divDialog").html() );
     } else {
         if ( jQuery( "#qNumber" ).length ) openDialog( jQuery('#qNumber').val(), jQuery("#divQ3").html() );
     }
@@ -92,3 +92,8 @@ function openDialog(num, html) {
         jQuery(dialogDiv).css("display", "block");
     }
 }
+
+function eraseCookie(name) { createCookie(name,"",-1); }
+function myLog(text) { if (window.console) console.log(text); }
+
+jQuery(document).ready(function() { initializeQuestions(); });
