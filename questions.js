@@ -10,7 +10,7 @@ var qCookie = 'qCookie'; // Tracking general question
 var nCookie = null;
 var dialogDiv = "#divDialog";
 
-jQuery(document).ready(function() { initializeQuestions() });
+jQuery(document).ready(function() { initializeQuestions(); });
 
 function resetQuestions() {
     eraseCookie(nCookie);
@@ -20,7 +20,7 @@ function resetQuestions() {
 
 function initializeQuestions() {
     // Newsletter Cookie DOES NOT EXIST so show Newsletter question
-    if ( readCookie(nCookie)==null ) {
+    if ( readCookie(nCookie)===null ) {
         openDialog( '1', jQuery("#divQ1").html() );
         console.log("IF TRIGGERED");
     } else {
@@ -35,7 +35,7 @@ function initializeQuestions() {
 }
 
 function openDialog(num, html) {
-    if (html == null || num ==  null ){
+    if (html === null || num ===  null ){
         myLog("*** WARNING num or html is null:"+num+"/"+html);
         return;
     }
@@ -83,7 +83,7 @@ function openDialog(num, html) {
     //     jQuery(dialogDiv).html( html );
     //     jQuery(dialogDiv).css("display", "block");
     // }
-};
+}
 
 function newsletterTask(qNumber, qSnippet, qAnswer) {
     //  Log question and answer to database
@@ -94,7 +94,6 @@ function newsletterTask(qNumber, qSnippet, qAnswer) {
             qNumber=2;
             jQuery(dialogDiv).html( "<div id='effect' class='ui-widget-content ui-corner-all'>"+jQuery("#divQ2").html()+"</div>" );
             return;
-            break;
         case 'Receive': // Yes, currently receives newsletter - ask again in 180 days
             createCookie(nCookie, 'yes', 180);
             break;
@@ -160,9 +159,9 @@ function createCookie(name,value,days) {
     if (days) {
         var date = new Date();
         date.setTime(date.getTime()+(days*24*60*60*1000));
-        var expires = "; expires="+date.toGMTString();
+        expires = "; expires="+date.toGMTString();
     }
-    else var expires = "";
+    else expires = "";
     document.cookie = name+"="+value+expires+"; path=/";
 }
 
