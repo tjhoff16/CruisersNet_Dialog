@@ -9,8 +9,6 @@ var nCookie = 'nCookie'; // Tracking newsletter question
 var qCookie = 'qCookie'; // Tracking general question
 var dialogDiv = "#divDialog";
 
-jQuery(document).ready(function() { initializeQuestions(); });
-
 function resetQuestions() {
     eraseCookie(nCookie);
     eraseCookie(qCookie);
@@ -174,3 +172,5 @@ function logAnswer(qnumber, snippet, answer) {
 
 function eraseCookie(name) { createCookie(name,"",-1); }
 function myLog(text) { if (window.console) console.log(text); }
+
+jQuery(document).ready(function() { initializeQuestions(); });
