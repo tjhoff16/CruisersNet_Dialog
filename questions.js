@@ -5,9 +5,8 @@
 //             /wp-content/themes/CruisersNet/includes/get_question.php
 //             /wp-content/themes/CruisersNet/includes/test_questions.php
 //
-// var nCookie = 'nCookie'; // Tracking newsletter question
+var nCookie = 'nCookie'; // Tracking newsletter question
 var qCookie = 'qCookie'; // Tracking general question
-var nCookie = null;
 var dialogDiv = "#divDialog";
 
 jQuery(document).ready(function() { initializeQuestions(); });
@@ -20,9 +19,8 @@ function resetQuestions() {
 
 function initializeQuestions() {
     // Newsletter Cookie DOES NOT EXIST so show Newsletter question
-    if ( readCookie(nCookie)===null ) {
+    if ( readCookie(nCookie)==null ) {
         openDialog( '1', jQuery("#divQ1").html() );
-        console.log("IF TRIGGERED");
     } else {
         if ( jQuery( "#qNumber" ).length ) openDialog( jQuery('#qNumber').val(), jQuery("#divQ3").html() );
     }
@@ -35,7 +33,7 @@ function initializeQuestions() {
 }
 
 function openDialog(num, html) {
-    if (html === null || num ===  null ){
+    if (html == null || num ==  null ){
         myLog("*** WARNING num or html is null:"+num+"/"+html);
         return;
     }
@@ -57,7 +55,6 @@ function openDialog(num, html) {
     //  If Dialogs are allowed
     //
     console.log(typeof HTMLDialogElement);
-
     if (typeof HTMLDialogElement === 'function') {
         jQuery(dialogDiv).dialog({
                                     resizable: false,
@@ -69,20 +66,19 @@ function openDialog(num, html) {
                                     maxHeight: 300,
                                     width:600,
                                     height:300,
-                                    border:black,
                                     //buttons: { ok: function() { jQuery(this).dialog('close'); } //end cancel button
                                     //}//end buttons
                                     });//end dialog
         jQuery(dialogDiv).html( html );
         jQuery(dialogDiv).closest('.ui-dialog').find('.ui-dialog-titlebar-close').hide();
         jQuery(dialogDiv).dialog('open');
-    // } else {
-    //     //
-    //     //  Dialog is unavailable
-    //     //
-    //     jQuery(dialogDiv).html( html );
-    //     jQuery(dialogDiv).css("display", "block");
-    // }
+    } else {
+        //
+        //  Dialog is unavailable
+        //
+        jQuery(dialogDiv).html( html );
+        jQuery(dialogDiv).css("display", "block");
+    }
 }
 
 function newsletterTask(qNumber, qSnippet, qAnswer) {
