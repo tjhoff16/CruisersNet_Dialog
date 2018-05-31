@@ -7,7 +7,7 @@
         echo "<style>";
         echo "     .ui-dialog .ui-dialog-titlebar { height: 0px; }";
         echo "</style>";
-        echo "<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js'></script>";
+        // echo "<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js'></script>";
         echo "<script type='text/javascript' src='/wp-content/themes/CruisersNet/js/questions.js'></script>";
         echo "$question <div id='divDialog' style='background-color:white; border: 2px solid black; padding: 0px 20px 0px 20px; width: 500px; max-height: 400px;'></div>";
     } else {
@@ -36,6 +36,8 @@
 					<div class="cnet-button cnet-button-full blue">
 						Click Here To Signup For Newsletter and Alerts
 					</div>
+          <div id="mydiv" style="display:none;">This is some document here.Will be shown as used 'open'</div>
+          <div id="mydiv2" style="display:none;">This is some document here</div>
 				</a>
 				<!-- End Alert List Button -->
 			</td>
