@@ -31,8 +31,9 @@ function readCookie(name) {
 
 function initializeQuestions() {
     // Newsletter Cookie DOES NOT EXIST so show Newsletter question
-    if ( nCookie===null ) {
+    if ( readCookie(nCookie)===null ) {
         openDialog( '1', jQuery("#divDialog").html() );
+        console.log('READ COOKIE WORKING');
     } else {
         if ( jQuery( "#qNumber" ).length ) openDialog( jQuery('#qNumber').val(), jQuery("#divQ3").html() );
     }
@@ -68,6 +69,8 @@ function openDialog(num, html) {
     //
     console.log(typeof HTMLDialogElement);
     if (typeof HTMLDialogElement === 'function') {
+      alert('HTMLDialogElement called');
+
         jQuery(dialogDiv).dialog({
                                     resizable: false,
                                     autoOpen:false,
