@@ -102,6 +102,8 @@ function openDialog(num, html) {
     //
     jQuery(dialogDiv).html(html);
     jQuery(dialogDiv).css("display", "inline-block");
+    jQuery(dialogDiv).css("margin-right", "10px");
+    jQuery(dialogDiv).css("margin-top", "20px");
   }
 }
 

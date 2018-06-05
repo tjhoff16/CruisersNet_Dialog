@@ -8,9 +8,8 @@
         echo "     .ui-dialog .ui-dialog-titlebar { height: 0px; }";
         echo "</style>";
         echo "<script type='text/javascript' src='/wp-content/themes/CruisersNet/js/questions.js'></script>";
-        echo "$question <div id='divDialog' style='background-color: white; border: 2px solid black; padding: 0px 20px; margin-right:10px; margin-top:20px; max-height: 400px; display: inline-block;'></div>";
-        // OR echo "$question <div id='divDialog' style='background-color: white; border: 2px solid black; padding: 0px 20px; margin-right:10px; margin-top:10px; margin-bottom:10px; width: 500px; max-height: 400px; display: inline-block; margin-left:25%;'></div>";
-        // echo "<div id='divNewsletter' style='background-color:white; border: 2px solid black; padding: 0px 20px 0px 20px; width: 500px; max-height: 400px;'></div>";
+        echo "$question <div id='divDialog' style='background-color: white; border: 2px solid black; padding: 0px 20px; max-height: 400px; display: inline-block;'></div>";
+        echo "<div id='divNewsletter' style='background-color:white; border: 2px solid black; padding: 0px 20px 0px 20px; width: 500px; max-height: 400px;'></div>";
     } else {
         echo "<!-- NO QUESTION TO ASK -->";
     }
